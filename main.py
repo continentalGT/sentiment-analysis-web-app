@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request  # Import Flask modules
-from transformers import pipeline  # Import pipeline from transformers
+from transformers import pipeline  # Import pipeline from transfrmers
 import sqlite3  # Import sqlite3
 
 app = Flask(__name__)
