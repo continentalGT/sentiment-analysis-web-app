@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            background-color: #fbeee6;
+        }
+        h1 {
+            text-align: center;
+            color: #873600;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 50%;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #result {
+            margin-top: 20px; /* Adds space below the submit button */
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>SENTIMENT ANALYSIS</h1>
+    <form method="POST">
+        <label for="text">Enter Text:</label><br>
+        <input type="text" id="text" name="text" value="{{ request.form['text'] if request.method == 'POST' else '' }}"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    {% if result %}
+        <h2 id="result">The sentiment is: {{ result[0]['label'] }} with confidence: {{ result[0]['score'] | round(2) }}.</h2>
+    {% endif %}
+
+</body>
+</html>
