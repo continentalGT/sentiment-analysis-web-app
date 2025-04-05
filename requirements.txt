@@ -1,4 +1,3 @@
 Flask==2.3.2
 transformers==4.38.1
 torch==2.2.0         # Required by transformers
-sqlite3              # Built-in, doesn't need to be installed via pip
