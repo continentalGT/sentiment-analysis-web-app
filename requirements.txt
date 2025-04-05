@@ -1,7 +1,7 @@
-Flask==2.3.2
-transformers==4.38.1
-torch==2.2.0         # Required by transformers
-gunicorn
+Flask==2.2.5
 Flask-SQLAlchemy==3.1.1
-
-
+transformers==4.36.1
+torch==2.0.1
+gunicorn==21.2.0
+psycopg2-binary==2.9.9
+numpy==1.26.4
