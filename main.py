@@ -24,7 +24,7 @@ with app.app_context():
     db.create_all()
 
 # Load model
-pipe = pipeline('sentiment-analysis', model='nlptown/bert-base-multilingual-uncased-sentiment')
+pipe = pipeline('sentiment-analysis', model='distilbert-base-uncased-finetuned-sst-2-english')
 
 @app.route('/', methods=['GET', 'POST'])
 def check_sentiment():
